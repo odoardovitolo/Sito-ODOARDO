@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+
+const titolare = 'Odoardo Vitolo';
+const email = 'odoardo.vitolo@gmail.com';
+const aggiornata = '19 novembre 2026';
+---
+<Base
+  title="Informativa privacy e cookie – Odoardo Vitolo"
+  description="Come vengono trattati i dati inviati con il modulo di contatto del sito di Odoardo Vitolo."
+>
+<div class="legal">
+  <header class="legal-head">
+    <a href="/" class="legal-home" aria-label="Torna alla home">
+      <svg width="28" height="28" viewBox="260 260 1080 1080" aria-hidden="true"><path d="M 1100.91 400.68 A 500 500 0 1 1 962.78 327.24" fill="none" stroke="#46C2AF" stroke-width="64"></path></svg>
+      <span>ODOARDO VITOLO</span>
+    </a>
+  </header>
+
+  <main class="legal-body">
+    <h1>Informativa privacy e cookie</h1>
+    <p class="legal-date">Aggiornata il {aggiornata}</p>
+
+    <h2>Chi tratta i tuoi dati</h2>
+    <p>Il titolare del trattamento è {titolare}. Per qualsiasi domanda sui tuoi dati puoi scrivere a <a href={`mailto:${email}`}>{email}</a>.</p>
+
+    <h2>Quali dati raccolgo</h2>
+    <p>Con il modulo «Raccontami la tua realtà» raccolgo i dati che scegli di inviarmi: nome, studio o azienda, email o telefono e il punto da cui parti (agenzia già attiva o marketing da zero).</p>
+    <p>Quando visiti il sito, il servizio che lo ospita registra in automatico alcuni dati tecnici, come l'indirizzo IP e il tipo di browser, per farlo funzionare e proteggerlo da abusi.</p>
+
+    <h2>Perché li uso</h2>
+    <ul>
+      <li><strong>Per risponderti</strong> e, se me lo chiedi, prepararti una proposta. La base giuridica è l'esecuzione di misure precontrattuali richieste da te (art. 6, par. 1, lett. b del GDPR).</li>
+      <li><strong>Per la sicurezza del sito</strong>, nel caso dei dati tecnici. La base giuridica è il legittimo interesse a mantenere il sito funzionante e protetto (art. 6, par. 1, lett. f del GDPR).</li>
+    </ul>
+    <p>Non uso i tuoi dati per inviarti pubblicità e non li vendo né li cedo a terzi.</p>
+
+    <h2>Devi per forza darmeli?</h2>
+    <p>No, ma senza un nome e un recapito non posso risponderti.</p>
+
+    <h2>Chi li riceve</h2>
+    <ul>
+      <li><strong>Netlify, Inc.</strong>, che ospita il sito e gestisce il modulo di contatto, come responsabile del trattamento. Netlify ha sede negli Stati Uniti: il trasferimento avviene con le garanzie previste dal GDPR (artt. 44 e seguenti), come le clausole contrattuali standard approvate dalla Commissione europea.</li>
+      <li><strong>Google</strong>, perché le richieste arrivano anche nella mia casella email Gmail.</li>
+    </ul>
+
+    <h2>Per quanto tempo li conservo</h2>
+    <p>Se la richiesta non diventa un incarico, cancello i tuoi dati entro 12 mesi dall'ultimo contatto. Se diventa un incarico, li conservo per il tempo del rapporto e per gli obblighi di legge che ne derivano.</p>
+
+    <h2>I tuoi diritti</h2>
+    <p>Puoi chiedermi in qualsiasi momento di accedere ai tuoi dati, correggerli, cancellarli, limitarne l'uso, opporti al trattamento o riceverli in un formato leggibile (artt. 15–22 del GDPR). Basta scrivere a <a href={`mailto:${email}`}>{email}</a>.</p>
+    <p>Se ritieni che i tuoi dati siano trattati in modo non corretto, puoi presentare reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+
+    <h2>Cookie</h2>
+    <p>Il sito non usa cookie di profilazione né cookie di terze parti, quindi non c'è un banner da accettare. Le statistiche di visita sono raccolte con Umami in forma anonima e aggregata, senza cookie e senza identificarti. I caratteri tipografici sono caricati dal sito stesso, senza servizi esterni.</p>
+
+    <p class="legal-back"><a href="/">← Torna alla home</a></p>
+  </main>
+</div>
+
+<style>
+  .legal { font-family: Inter, system-ui, sans-serif; color: #293133; background: #FFFFFF; min-height: 100vh; }
+  .legal-head { border-bottom: 1px solid #E3E6E7; padding: 16px 24px; }
+  .legal-home { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 14px; font-weight: 700; color: #293133; }
+  .legal-body { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; font-size: 16px; line-height: 1.6; }
+  .legal-body h1 { font-size: clamp(30px, 4vw, 56px); line-height: 1.1; margin: 0 0 8px; letter-spacing: -0.02em; }
+  .legal-body h2 { font-size: 24px; margin: 40px 0 8px; }
+  .legal-date { color: #5F686A; font-size: 14px; margin: 0 0 24px; }
+  .legal-body ul { padding-left: 20px; }
+  .legal-body li { margin-bottom: 8px; }
+  .legal-body a { color: inherit; text-decoration: underline; text-decoration-color: #46C2AF; text-underline-offset: 3px; }
+  .legal-back { margin-top: 48px; }
+</style>
+</Base>

@@ -1,0 +1,50 @@
+---
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/img/anteprima-social.jpg', Astro.site);
+
+// Statistiche senza cookie (Umami): si attivano solo quando su Netlify c'è la variabile
+// PUBLIC_UMAMI_WEBSITE_ID con il codice del sito preso da Umami.
+const umamiId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+---
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {noindex && <meta name="robots" content="noindex">}
+  <meta name="theme-color" content="#FFFFFF">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Odoardo Vitolo">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  {umamiId && <script defer src="https://cloud.umami.is/script.js" data-website-id={umamiId}></script>}
+</head>
+<body>
+  <slot />
+</body>
+</html>

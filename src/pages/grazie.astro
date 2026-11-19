@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Grazie – Odoardo Vitolo"
+  description="Messaggio ricevuto."
+  noindex
+>
+<main class="thanks">
+  <svg width="56" height="56" viewBox="260 260 1080 1080" aria-hidden="true"><path d="M 1100.91 400.68 A 500 500 0 1 1 962.78 327.24" fill="none" stroke="#46C2AF" stroke-width="64"></path></svg>
+  <h1>Grazie, ho ricevuto il tuo messaggio.</h1>
+  <p>Ti rispondo personalmente al più presto.</p>
+  <a href="/" class="thanks-btn">Torna alla home</a>
+</main>
+
+<style>
+  .thanks { font-family: Inter, system-ui, sans-serif; color: #293133; background: #F5F6F6; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; gap: 16px; }
+  .thanks h1 { font-size: clamp(30px, 4vw, 56px); line-height: 1.1; letter-spacing: -0.02em; margin: 16px 0 0; text-wrap: balance; }
+  .thanks p { font-size: 18px; color: #5F686A; margin: 0; }
+  .thanks-btn { margin-top: 16px; background: #46C2AF; color: #FFFFFF; text-decoration: none; border-radius: 999px; padding: 16px 28px; font-weight: 500; }
+</style>
+</Base>
